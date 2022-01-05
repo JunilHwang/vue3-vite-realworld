@@ -1,5 +1,6 @@
 import { shallowMount, VueWrapper } from "@vue/test-utils";
 import HelloWorld from "./HelloWorld.vue";
+import { store } from "@/store";
 
 describe("HelloWorld.vue", () => {
   const msg = "new message";
@@ -7,6 +8,9 @@ describe("HelloWorld.vue", () => {
   beforeEach(() => {
     wrapper = shallowMount(HelloWorld, {
       props: { msg },
+      global: {
+        plugins: [store],
+      }
     });
   })
 

@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ComputedRef, ref } from "vue";
+import { useStore } from "vuex";
 
 defineProps<{ msg: string }>();
 
-const count = ref(0);
+const store = useStore();
+
+const count = computed<number>(() => store.state.count);
 
 const increment = () => {
-  count.value += 1;
+  store.commit('increment');
 }
 </script>
 
