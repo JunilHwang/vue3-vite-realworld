@@ -11,13 +11,30 @@
     "esModuleInterop": true,
     "lib": [
       "esnext",
-      "dom"
-    ]
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "baseUrl": ".",
+    "types": [
+      "vite/client",
+      "@types/jest"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
